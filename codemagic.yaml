@@ -1,0 +1,20 @@
+workflows:
+  flutter:
+    name: Flutter Build Workflow
+    instance_type: mac_mini
+    description: This workflow builds and tests the Flutter app
+    platforms:
+      ios:
+        code_signing: false
+      android:
+        build_mode: release
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Run tests
+        script: |
+          flutter test
+      - name: Build APK
+        script: |
+          flutter build apk --release
