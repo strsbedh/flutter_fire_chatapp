@@ -2,12 +2,7 @@ workflows:
   flutter:
     name: Flutter Build Workflow
     instance_type: mac_mini
-    description: This workflow builds and tests the Flutter app
-    platforms:
-      ios:
-        code_signing: false
-      android:
-        build_mode: release
+    # Removed extra fields like 'description' and 'platforms'
     scripts:
       - name: Install dependencies
         script: |
